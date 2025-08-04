@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recruiter Dashboard - WorkZen</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="recruiter.js"></script>
+</head>
+<body>
+  <h1>Recruiter Dashboard</h1>
+  <section>
+    <h2>Post a New Job</h2>
+    <form id="job-post-form">
+      <label for="title">Job Title:</label><br />
+      <input type="text" id="title" name="title" required /><br />
+      <label for="description">Description:</label><br />
+      <textarea id="description" name="description" required></textarea><br />
+      <label for="location">Location:</label><br />
+      <input type="text" id="location" name="location" required /><br />
+      <button type="submit">Post Job</button>
+    </form>
+  </section>
+  <section>
+    <h2>Your Posted Jobs</h2>
+    <div id="posted-jobs"></div>
+  </section>
+</body>
+</html>

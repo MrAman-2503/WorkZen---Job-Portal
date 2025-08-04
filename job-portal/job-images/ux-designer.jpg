@@ -1,0 +1,6 @@
+
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#6a11cb"/>
+  <rect x="50" y="50" width="200" height="100" fill="#2575fc" rx="10"/>
+  <text x="150" y="110" font-family="Arial" font-size="20" fill="white" text-anchor="middle">Job Image</text>
+</svg>

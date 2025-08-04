@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login / Signup - WorkZen</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="auth.js"></script>
+</head>
+<body>
+  <h1>WorkZen</h1>
+  <div class="auth-container">
+    <div class="form-toggle">
+      <button id="login-toggle" class="active">Login</button>
+      <button id="signup-toggle">Sign Up</button>
+    </div>
+    <div class="form-wrapper">
+      <form id="login-form" class="auth-form active">
+        <label for="login-username">Username:</label>
+        <input type="text" id="login-username" name="username" required />
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" name="password" required />
+        <button type="submit">Login</button>
+      </form>
+      <form id="signup-form" class="auth-form">
+        <label for="signup-username">Username:</label>
+        <input type="text" id="signup-username" name="username" required />
+        <label for="signup-password">Password:</label>
+        <input type="password" id="signup-password" name="password" required />
+        <label for="signup-role">Role:</label>
+        <select id="signup-role" name="role" required>
+          <option value="user">User</option>
+          <option value="recruiter">Recruiter</option>
+        </select>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jobs - WorkZen</title>
+  <link rel="stylesheet" href="modern-style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Awesome Kit Menu Bar -->
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <h2><i class="fas fa-briefcase"></i> WorkZen</h2>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="modern-jobs.html" class="active"><i class="fas fa-search"></i> Jobs</a></li>
+          <li><a href="#"><i class="fas fa-user"></i> For Recruiters</a></li>
+          <li><a href="#"><i class="fas fa-cog"></i> Admin</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="menu-toggle" class="menu-toggle-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sliding Menu -->
+  <div id="sliding-menu" class="sliding-menu">
+    <div class="menu-header">
+      <h3>Menu</h3>
+      <button id="menu-close" class="menu-close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="modern-jobs.html"><i class="fas fa-search"></i> Jobs</a></li>
+      <li><a href="#"><i class="fas fa-user"></i> For Recruiters</a></li>
+      <li><a href="#"><i class="fas fa-cog"></i> Admin</a></li>
+      <li><a href="#"><i class="fas fa-user-circle"></i> My Profile</a></li>
+      <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </div>
+
+  <main class="main-content">
+    <div class="container">
+      <h1 class="page-title">Find Your Dream Job</h1>
+      
+      <!-- Two Column Grid Layout -->
+      <div class="job-portal-layout">
+        <!-- Filter Section (Left Column) -->
+        <section class="filter-section">
+          <div class="filter-card">
+            <h2><i class="fas fa-filter"></i> Filter Jobs</h2>
+            <form id="job-filter-form">
+              <div class="filter-group">
+                <label for="search-keyword">Keywords</label>
+                <input type="text" id="search-keyword" placeholder="Job title, skills, etc." />
+              </div>
+              
+              <div class="filter-group">
+                <label for="filter-location">Location</label>
+                <select id="filter-location">
+                  <option value="">All Locations</option>
+                  <option value="New York">New York</option>
+                  <option value="San Francisco">San Francisco</option>
+                  <option value="Remote">Remote</option>
+                  <option value="Work From Home">Work From Home</option>
+                  <option value="Work From Office">Work From Office</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label for="filter-min-income">Salary Range</label>
+                <div class="salary-range">
+                  <input type="number" id="filter-min-income" placeholder="Min" min="0" />
+                  <span>-</span>
+                  <input type="number" id="filter-max-income" placeholder="Max" min="0" />
+                </div>
+              </div>
+              
+              <div class="filter-group">
+                <label for="filter-job-type">Job Type</label>
+                <select id="filter-job-type">
+                  <option value="">All Types</option>
+                  <option value="Full-time">Full-time</option>
+                  <option value="Part-time">Part-time</option>
+                  <option value="Contract">Contract</option>
+                  <option value="Internship">Internship</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label>Experience Level</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="experience" value="entry">
+                    <span class="checkmark"></span>
+                    Entry Level
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="experience" value="mid">
+                    <span class="checkmark"></span>
+                    Mid Level
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="experience" value="senior">
+                    <span class="checkmark"></span>
+                    Senior Level
+                  </label>
+                </div>
+              </div>
+              
+              <div class="filter-actions">
+                <button type="reset" id="reset-filters">Reset</button>
+                <button type="submit" id="filter-btn">Apply Filters</button>
+              </div>
+            </form>
+          </div>
+          
+          <div class="filter-card">
+            <h3><i class="fas fa-chart-bar"></i> Job Statistics</h3>
+            <div class="stats-container">
+              <div class="stat-item">
+                <span class="stat-number">120+</span>
+                <span class="stat-label">Jobs Available</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">45+</span>
+                <span class="stat-label">Companies</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">85%</span>
+                <span class="stat-label">Response Rate</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Job Listings (Right Column) -->
+        <section class="job-listings-section">
+          <div class="section-header">
+            <h2><i class="fas fa-list"></i> Job Listings</h2>
+            <div class="sort-options">
+              <label for="sort-by">Sort by:</label>
+              <select id="sort-by">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="salary-high">Salary: High to Low</option>
+                <option value="salary-low">Salary: Low to High</option>
+              </select>
+            </div>
+          </div>
+          
+          <div id="job-list" class="job-listings-grid">
+            <!-- Job listings will be populated here by JavaScript -->
+            <div class="loading-placeholder">
+              <i class="fas fa-spinner fa-spin"></i>
+              <p>Loading jobs...</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Job Detail Modal -->
+    <div id="job-detail-modal" class="modal">
+      <div class="modal-content">
+        <span id="job-detail-close" class="close-button">&times;</span>
+        <div id="job-detail-content">
+          <!-- Job details will be populated here -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3><i class="fas fa-briefcase"></i> WorkZen</h3>
+          <p>Connecting talent with opportunities since 2024.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 WorkZen. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sample job data with image paths
+    const sampleJobs = [
+      {
+        id: 1,
+        title: 'Frontend Developer',
+        company: 'TechCorp',
+        location: 'New York',
+        salary: '$80,000 - $100,000',
+        type: 'Full-time',
+        experience: 'mid',
+        description: 'We are looking for a skilled Frontend Developer to join our team. You will be responsible for building user interfaces using React and Vue.js.',
+        image: 'job-images/frontend-dev.jpg',
+        requirements: [
+          '3+ years of experience with React or Vue.js',
+          'Strong knowledge of HTML, CSS, and JavaScript',
+          'Experience with state management libraries',
+          'Familiarity with RESTful APIs'
+        ],
+        responsibilities: [
+          'Develop new user-facing features',
+          'Build reusable code and libraries',
+          'Ensure the technical feasibility of UI/UX designs',
+          'Optimize applications for maximum speed and scalability'
+        ],
+        benefits: [
+          'Health, dental, and vision insurance',
+          'Flexible working hours',
+          'Remote work options',
+          'Professional development opportunities'
+        ]
+      },
+      {
+        id: 2,
+        title: 'UX Designer',
+        company: 'DesignHub',
+        location: 'San Francisco',
+        salary: '$90,000 - $120,000',
+        type: 'Full-time',
+        experience: 'senior',
+        description: 'Join our design team to create beautiful and intuitive user experiences. Must have experience with Figma and user research.',
+        image: 'job-images/ux-designer.jpg',
+        requirements: [
+          'Bachelor\'s degree in Design, HCI, or related field',
+          '5+ years of UX design experience',
+          'Proficiency in Figma, Sketch, and Adobe Creative Suite',
+          'Experience with user research and usability testing'
+        ],
+        responsibilities: [
+          'Create wireframes, prototypes, and high-fidelity designs',
+          'Conduct user research and usability testing',
+          'Collaborate with product managers and developers',
+          'Develop and maintain design systems'
+        ],
+        benefits: [
+          'Competitive salary and equity',
+          'Unlimited PTO',
+          'Learning and conference budget',
+          'Wellness stipend'
+        ]
+      },
+      {
+        id: 3,
+        title: 'Backend Engineer',
+        company: 'ServerStack',
+        location: 'Remote',
+        salary: '$100,000 - $140,000',
+        type: 'Full-time',
+        experience: 'senior',
+        description: 'Develop and maintain our backend services using Node.js and Python. Experience with cloud platforms required.',
+        image: 'job-images/backend-engineer.jpg',
+        requirements: [
+          '5+ years of backend development experience',
+          'Strong knowledge of Node.js and Python',
+          'Experience with cloud platforms (AWS, GCP, Azure)',
+          'Database design and optimization skills'
+        ],
+        responsibilities: [
+          'Design and implement scalable backend services',
+          'Optimize database performance and queries',
+          'Develop and maintain APIs',
+          'Ensure system security and data protection'
+        ],
+        benefits: [
+          'Fully remote work',
+          'Stock options',
+          'Home office stipend',
+          'Annual team retreats'
+        ]
+      },
+      {
+        id: 4,
+        title: 'Marketing Intern',
+        company: 'GrowthCo',
+        location: 'Work From Home',
+        salary: '$20 - $25/hr',
+        type: 'Internship',
+        experience: 'entry',
+        description: 'Learn digital marketing strategies and help manage social media campaigns. Great opportunity for students.',
+        image: 'job-images/marketing-intern.jpg',
+        requirements: [
+          'Currently enrolled in a marketing or business program',
+          'Basic understanding of social media platforms',
+          'Strong written and verbal communication skills',
+          'Familiarity with Google Analytics is a plus'
+        ],
+        responsibilities: [
+          'Assist with social media content creation',
+          'Support email marketing campaigns',
+          'Conduct market research and competitor analysis',
+          'Help organize marketing events and webinars'
+        ],
+        benefits: [
+          'Flexible schedule',
+          'Mentorship program',
+          'Potential for full-time conversion',
+          'Industry networking opportunities'
+        ]
+      }
+    ];
+
+    // DOM Elements
+    const jobList = document.getElementById('job-list');
+    const searchKeyword = document.getElementById('search-keyword');
+    const filterLocation = document.getElementById('filter-location');
+    const filterMinIncome = document.getElementById('filter-min-income');
+    const filterMaxIncome = document.getElementById('filter-max-income');
+    const filterJobType = document.getElementById('filter-job-type');
+    const filterExperience = document.querySelectorAll('input[name="experience"]');
+    const filterBtn = document.getElementById('filter-btn');
+    const resetFiltersBtn = document.getElementById('reset-filters');
+    const sortBy = document.getElementById('sort-by');
+    const themeToggle = document.getElementById('theme-toggle');
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const slidingMenu = document.getElementById('sliding-menu');
+    const jobFilterForm = document.getElementById('job-filter-form');
+
+    // Theme functionality
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.body.setAttribute('data-theme', savedTheme);
+      
+      const icon = themeToggle.querySelector('i');
+      if (savedTheme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+    }
+
+    function toggleTheme() {
+      const currentTheme = document.body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      const icon = themeToggle.querySelector('i');
+      if (newTheme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    }
+
+    // Menu functionality
+    function toggleMenu() {
+      slidingMenu.classList.toggle('open');
+    }
+
+    function closeMenu() {
+      slidingMenu.classList.remove('open');
+    }
+
+    // Job rendering
+    function renderJobs(jobs) {
+      if (jobs.length === 0) {
+        jobList.innerHTML = '<div class="no-jobs-message"><p>No jobs found matching your criteria.</p></div>';
+        return;
+      }
+      
+      jobList.innerHTML = '';
+      jobs.forEach(job => {
+        const jobCard = document.createElement('div');
+        jobCard.classList.add('job-card');
+        jobCard.innerHTML = `
+          <div class="job-image">
+            <img src="${job.image}" alt="${job.title}" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="job-details">
+            <div class="job-header">
+              <h3 class="job-title">${job.title}</h3>
+              <span class="job-salary">${job.salary}</span>
+            </div>
+            <p class="job-company">${job.company}</p>
+            <p class="job-location"><i class="fas fa-map-marker-alt"></i> ${job.location}</p>
+            <p class="job-description">${job.description}</p>
+            <div class="job-meta">
+              <div class="job-type">${job.type}</div>
+              <button data-id="${job.id}" class="apply-btn">Apply Now</button>
+            </div>
+          </div>
+        `;
+        jobList.appendChild(jobCard);
+      });
+    }
+
+    // Filter jobs
+    function filterJobs(jobs) {
+      const keyword = searchKeyword.value.toLowerCase();
+      const location = filterLocation.value;
+      const minIncome = filterMinIncome.value;
+      const maxIncome = filterMaxIncome.value;
+      const jobType = filterJobType.value;
+      
+      // Get selected experience levels
+      const selectedExperience = Array.from(filterExperience)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
+      
+      return jobs.filter(job => {
+        // Keyword filter
+        const matchesKeyword = !keyword || 
+          job.title.toLowerCase().includes(keyword) || 
+          job.description.toLowerCase().includes(keyword) ||
+          job.company.toLowerCase().includes(keyword);
+        
+        // Location filter
+        const matchesLocation = !location || job.location === location;
+        
+        // Salary filter (simplified for demo)
+        const matchesSalary = (!minIncome || parseInt(job.salary.replace(/[^0-9]/g, '')) >= parseInt(minIncome)) &&
+                              (!maxIncome || parseInt(job.salary.replace(/[^0-9]/g, '')) <= parseInt(maxIncome));
+        
+        // Job type filter
+        const matchesJobType = !jobType || job.type === jobType;
+        
+        // Experience filter
+        const matchesExperience = selectedExperience.length === 0 || selectedExperience.includes(job.experience);
+        
+        return matchesKeyword && matchesLocation && matchesSalary && matchesJobType && matchesExperience;
+      });
+    }
+
+    // Sort jobs
+    function sortJobs(jobs) {
+      const sortValue = sortBy.value;
+      
+      switch(sortValue) {
+        case 'newest':
+          return [...jobs].sort((a, b) => b.id - a.id);
+        case 'oldest':
+          return [...jobs].sort((a, b) => a.id - b.id);
+        case 'salary-high':
+          return [...jobs].sort((a, b) => {
+            const aSalary = parseInt(a.salary.replace(/[^0-9]/g, ''));
+            const bSalary = parseInt(b.salary.replace(/[^0-9]/g, ''));
+            return bSalary - aSalary;
+          });
+        case 'salary-low':
+          return [...jobs].sort((a, b) => {
+            const aSalary = parseInt(a.salary.replace(/[^0-9]/g, ''));
+            const bSalary = parseInt(b.salary.replace(/[^0-9]/g, ''));
+            return aSalary - bSalary;
+          });
+        default:
+          return jobs;
+      }
+    }
+
+    // Load jobs
+    function loadJobs() {
+      // In a real app, this would fetch from an API
+      // For demo, we'll use sample data
+      let jobs = [...sampleJobs];
+      
+      // Apply filters
+      jobs = filterJobs(jobs);
+      
+      // Apply sorting
+      jobs = sortJobs(jobs);
+      
+      // Render jobs
+      renderJobs(jobs);
+    }
+
+    // Reset filters
+    function resetFilters() {
+      jobFilterForm.reset();
+      loadJobs();
+    }
+
+    // Event listeners
+    filterBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      loadJobs();
+    });
+
+    resetFiltersBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      resetFilters();
+    });
+
+    sortBy.addEventListener('change', loadJobs);
+
+    jobFilterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      loadJobs();
+    });
+
+    // Add event listeners for experience checkboxes
+    filterExperience.forEach(checkbox => {
+      checkbox.addEventListener('change', loadJobs);
+    });
+
+    // Theme toggle
+    themeToggle.addEventListener('click', toggleTheme);
+
+    // Menu toggle
+    menuToggle.addEventListener('click', toggleMenu);
+    menuClose.addEventListener('click', closeMenu);
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (slidingMenu.classList.contains('open') && 
+          !slidingMenu.contains(e.target) && 
+          e.target !== menuToggle && 
+          !menuToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // Apply button functionality
+    jobList.addEventListener('click', (e) => {
+      if (e.target.classList.contains('apply-btn')) {
+        const jobId = e.target.getAttribute('data-id');
+        alert(`Application process started for job ID: ${jobId}\nIn a real application, this would redirect to an application form.`);
+      }
+    });
+
+    // Close modal when close button is clicked
+    document.getElementById('job-detail-close').addEventListener('click', () => {
+      document.getElementById('job-detail-modal').style.display = 'none';
+    });
+
+    // Close modal when clicking outside of modal content
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('job-detail-modal');
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    // Initialize
+    initTheme();
+    loadJobs();
+  </script>
+</body>
+</html>

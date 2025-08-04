@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jobs - WorkZen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script defer src="jobs-enhanced.js"></script>
+</head>
+<body>
+  <!-- Awesome Kit Menu Bar -->
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <h2><i class="fas fa-briefcase"></i> WorkZen</h2>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="jobs-enhanced.html" class="active"><i class="fas fa-search"></i> Jobs</a></li>
+          <li><a href="#"><i class="fas fa-user"></i> For Recruiters</a></li>
+          <li><a href="#"><i class="fas fa-cog"></i> Admin</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="menu-toggle" class="menu-toggle-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sliding Menu -->
+  <div id="sliding-menu" class="sliding-menu">
+    <div class="menu-header">
+      <h3>Menu</h3>
+      <button id="menu-close" class="menu-close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="jobs-enhanced.html"><i class="fas fa-search"></i> Jobs</a></li>
+      <li><a href="#"><i class="fas fa-user"></i> For Recruiters</a></li>
+      <li><a href="#"><i class="fas fa-cog"></i> Admin</a></li>
+      <li><a href="#"><i class="fas fa-user-circle"></i> My Profile</a></li>
+      <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </div>
+
+  <main class="main-content">
+    <div class="container">
+      <h1 class="page-title">Find Your Dream Job</h1>
+      
+      <!-- Two Column Grid Layout -->
+      <div class="job-portal-layout">
+        <!-- Filter Section (Left Column) -->
+        <section class="filter-section">
+          <div class="filter-card">
+            <h2><i class="fas fa-filter"></i> Filter Jobs</h2>
+            <form id="job-filter-form">
+              <div class="filter-group">
+                <label for="search-keyword">Keywords</label>
+                <input type="text" id="search-keyword" placeholder="Job title, skills, etc." />
+              </div>
+              
+              <div class="filter-group">
+                <label for="filter-location">Location</label>
+                <select id="filter-location">
+                  <option value="">All Locations</option>
+                  <option value="New York">New York</option>
+                  <option value="San Francisco">San Francisco</option>
+                  <option value="Remote">Remote</option>
+                  <option value="Work From Home">Work From Home</option>
+                  <option value="Work From Office">Work From Office</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label for="filter-min-income">Salary Range</label>
+                <div class="salary-range">
+                  <input type="number" id="filter-min-income" placeholder="Min" min="0" />
+                  <span>-</span>
+                  <input type="number" id="filter-max-income" placeholder="Max" min="0" />
+                </div>
+              </div>
+              
+              <div class="filter-group">
+                <label for="filter-job-type">Job Type</label>
+                <select id="filter-job-type">
+                  <option value="">All Types</option>
+                  <option value="Full-time">Full-time</option>
+                  <option value="Part-time">Part-time</option>
+                  <option value="Contract">Contract</option>
+                  <option value="Internship">Internship</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label>Experience Level</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="experience" value="entry">
+                    <span class="checkmark"></span>
+                    Entry Level
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="experience" value="mid">
+                    <span class="checkmark"></span>
+                    Mid Level
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="experience" value="senior">
+                    <span class="checkmark"></span>
+                    Senior Level
+                  </label>
+                </div>
+              </div>
+              
+              <div class="filter-actions">
+                <button type="reset" id="reset-filters">Reset</button>
+                <button type="submit" id="filter-btn">Apply Filters</button>
+              </div>
+            </form>
+          </div>
+          
+          <div class="filter-card">
+            <h3><i class="fas fa-chart-bar"></i> Job Statistics</h3>
+            <div class="stats-container">
+              <div class="stat-item">
+                <span class="stat-number">120+</span>
+                <span class="stat-label">Jobs Available</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">45+</span>
+                <span class="stat-label">Companies</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">85%</span>
+                <span class="stat-label">Response Rate</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Job Listings (Right Column) -->
+        <section class="job-listings-section">
+          <div class="section-header">
+            <h2><i class="fas fa-list"></i> Job Listings</h2>
+            <div class="sort-options">
+              <label for="sort-by">Sort by:</label>
+              <select id="sort-by">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="salary-high">Salary: High to Low</option>
+                <option value="salary-low">Salary: Low to High</option>
+              </select>
+            </div>
+          </div>
+          
+          <div id="job-list" class="job-listings-grid">
+            <!-- Job listings will be populated here by JavaScript -->
+            <div class="loading-placeholder">
+              <i class="fas fa-spinner fa-spin"></i>
+              <p>Loading jobs...</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Job Detail Modal -->
+    <div id="job-detail-modal" class="modal">
+      <div class="modal-content">
+        <span id="job-detail-close" class="close-button">&times;</span>
+        <div id="job-detail-content">
+          <!-- Job details will be populated here -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3><i class="fas fa-briefcase"></i> WorkZen</h3>
+          <p>Connecting talent with opportunities since 2024.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 WorkZen. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
